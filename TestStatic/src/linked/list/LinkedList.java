@@ -1,15 +1,11 @@
 package linked.list;
 
-
-import java.util.ArrayList;
-import java.util.List;
-
+import car.Car;
 
 public class LinkedList {
     Element head = null;
-    List<String> list = new ArrayList();
 
-    public void add(Carr value) {
+    public void add(Car value) {
         if (head == null) {
             head = new Element(null, value);
         }
@@ -18,7 +14,7 @@ public class LinkedList {
         System.out.println(value.getName());
     }
 
-    public void remove(Carr car) {
+    public void remove(Car car) {
         if (head == null)
             return;
         Element current = head;
@@ -54,40 +50,13 @@ public class LinkedList {
 
     class Element {
         private Element next;
-        private Carr value;
+        private Car value;
 
-        Element(Element next, Carr value) {
+        Element(Element next, Car value) {
             this.next = next;
             this.value = value;
         }
     }
 }
 
-class Carr {
-    private String name;
-
-    Carr(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-}
-
-class User {
-    public static void main(String[] args) {
-        Carr a = new Carr("1");
-        Carr b = new Carr("2");
-        Carr c = new Carr("3");
-        Carr d = new Carr("4");
-        LinkedList list = new LinkedList();
-        list.add(a);
-        list.add(b);
-        list.add(c);
-        list.add(d);
-        list.remove(a);
-        list.getAll();
-    }
-}
 
